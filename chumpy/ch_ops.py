@@ -44,12 +44,12 @@ __all__ += wont_implement
 __all__ += numpy_array_creation_routines
     
     
-import ch
+from . import ch
 import numpy as np
 import warnings
-import cPickle as pickle
+import pickle as pickle
 import scipy.sparse as sp
-from utils import row, col
+from .utils import row, col
 from copy import copy as copy_copy
 
 __all__ += ['pi', 'set_printoptions']
