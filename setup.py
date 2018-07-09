@@ -5,11 +5,12 @@ See LICENCE.txt for licensing and contact information.
 """
 
 from distutils.core import setup
-from pip.req import parse_requirements
 from runpy import run_path
-
-install_reqs = parse_requirements('requirements.txt', session=False)
-install_requires = [str(ir.req) for ir in install_reqs]
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
+install_reqs = parse_requirements('requirements.txt')
 
 def get_version():
     namespace = run_path('chumpy/version.py')
@@ -23,7 +24,7 @@ setup(name='chumpy',
     url='https://github.com/mattloper/chumpy',
     description='chumpy',
     license='MIT',
-    install_requires=install_requires,
+    install_requires=install_reqs,
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
