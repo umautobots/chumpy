@@ -21,3 +21,14 @@ chumpy.demo() # prints out a list of possible demos
 ```
 
 Licensing is specified in the attached LICENSE.txt.
+
+## Note:
+The chumpy framework was originally by Matthew Loper at https://github.com/mattloper/chumpy. C. Barto (@barcharcraz) modified and updated in this version for pip 10 and Python 3. 
+To install, run 
+```
+python3 -m pip install --user git+https://github.com/umautobots/chumpy.git
+```
+Tested with pip 10.0.1 and Python 3.6.7. 
+
+Latest revision: July 2018.
+
